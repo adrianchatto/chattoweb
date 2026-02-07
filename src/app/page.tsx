@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { profileData } from '@/content/profile';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
@@ -46,6 +47,24 @@ export default function Home() {
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm font-medium text-primary backdrop-blur-sm">
                 <Briefcase className="h-4 w-4" />
                 <span>Open to Opportunities</span>
+              </div>
+
+              {/* Professional Headshot */}
+              <div className="relative group">
+                {/* Glow effect behind image */}
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary/10 rounded-full blur-2xl group-hover:blur-3xl transition-all duration-500 scale-110" />
+
+                {/* Image container with ring */}
+                <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-background shadow-2xl ring-4 ring-primary/10 group-hover:ring-primary/30 transition-all duration-300">
+                  <Image
+                    src={personal.headshot}
+                    alt={`${personal.name} - Professional Headshot`}
+                    fill
+                    className="object-cover"
+                    priority
+                    sizes="(max-width: 768px) 160px, 192px"
+                  />
+                </div>
               </div>
 
               {/* Main Heading with enhanced styling */}
