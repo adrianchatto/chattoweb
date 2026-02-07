@@ -22,24 +22,36 @@ export default function Home() {
 
       {/* Main Content */}
       <main className="pt-16">
-        {/* Enhanced Hero Section */}
+        {/* Enhanced Hero Section with Banner */}
         <section className="relative overflow-hidden">
-          {/* Gradient Background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-background" />
-          <div className="absolute inset-0 grid-pattern opacity-30" />
+          {/* Premium Gradient Banner Background */}
+          <div className="absolute inset-0">
+            {/* Base gradient */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-primary/5 to-background" />
+
+            {/* Radial gradient overlay */}
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent" />
+
+            {/* Grid pattern */}
+            <div className="absolute inset-0 grid-pattern opacity-20" />
+
+            {/* Subtle animated gradient orbs */}
+            <div className="absolute top-20 -left-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse-slow" />
+            <div className="absolute bottom-20 -right-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '1s' }} />
+          </div>
 
           <div className="container relative">
             <div className="flex flex-col items-center text-center py-20 md:py-32 space-y-8">
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm font-medium text-primary">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm font-medium text-primary backdrop-blur-sm">
                 <Briefcase className="h-4 w-4" />
                 <span>Open to Opportunities</span>
               </div>
 
-              {/* Main Heading */}
-              <div className="space-y-4 max-w-4xl">
+              {/* Main Heading with enhanced styling */}
+              <div className="space-y-6 max-w-4xl">
                 <h2 className="text-5xl md:text-7xl font-bold tracking-tight">
-                  <span className="bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-foreground via-foreground to-foreground/70 bg-clip-text text-transparent">
                     {personal.name}
                   </span>
                 </h2>
@@ -48,29 +60,32 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* Bio */}
-              <p className="text-lg text-muted-foreground max-w-2xl leading-relaxed">
-                {personal.bio[0]}
-              </p>
+              {/* Bio with subtle backdrop */}
+              <div className="relative">
+                <div className="absolute inset-0 bg-background/40 blur-xl rounded-full" />
+                <p className="relative text-lg text-muted-foreground max-w-2xl leading-relaxed px-6">
+                  {personal.bio[0]}
+                </p>
+              </div>
 
-              {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              {/* CTAs with enhanced shadow */}
+              <div className="flex flex-col sm:flex-row gap-4 pt-6">
                 <a href="/cv.pdf" download="Adrian_Chatto_CV.pdf">
-                  <Button variant="primary" size="lg" className="group w-full sm:w-auto">
+                  <Button variant="primary" size="lg" className="group w-full sm:w-auto shadow-lg hover:shadow-xl transition-shadow">
                     Download CV
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </a>
                 <a href={`mailto:${personal.email}`}>
-                  <Button variant="outline" size="lg" className="w-full sm:w-auto">
+                  <Button variant="outline" size="lg" className="w-full sm:w-auto backdrop-blur-sm">
                     <Mail className="mr-2 h-4 w-4" />
                     Get in Touch
                   </Button>
                 </a>
               </div>
 
-              {/* Quick Links */}
-              <div className="flex items-center gap-6 pt-8">
+              {/* Quick Links with backdrop */}
+              <div className="flex items-center gap-6 pt-8 px-6 py-3 rounded-full bg-background/30 backdrop-blur-sm border border-primary/10">
                 <a
                   href={personal.links.linkedin}
                   className="text-muted-foreground hover:text-primary transition-colors"
@@ -85,13 +100,16 @@ export default function Home() {
                 >
                   <Github className="h-5 w-5" />
                 </a>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground border-l border-primary/20 pl-6">
                   <MapPin className="h-4 w-4" />
                   <span>{personal.location}</span>
                 </div>
               </div>
             </div>
           </div>
+
+          {/* Bottom fade */}
+          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
         </section>
 
         {/* Enhanced Highlights */}
