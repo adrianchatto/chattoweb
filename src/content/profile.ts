@@ -21,9 +21,9 @@ export const profileData: ProfileData = {
 
   highlights: [
     { label: 'Years Experience', value: 20, suffix: '+' },
-    { label: 'Global Rollouts', value: 15, suffix: '+ Countries' },
-    { label: 'Users Migrated', value: 10, suffix: 'K+' },
-    { label: 'On-Time Delivery', value: 20, suffix: '% Improvement' },
+    { label: 'Countries Delivered', value: 15, suffix: '+' },
+    { label: 'Users Migrated', value: 10000, suffix: '+' },
+    { label: 'Faster Turnaround', value: 27, suffix: '%' },
   ],
 
   skills: [
