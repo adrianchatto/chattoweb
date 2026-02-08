@@ -15,7 +15,7 @@ export interface PersonalInfo {
 
 export interface Highlight {
   label: string;
-  value: number;
+  value: number | string;
   suffix?: string;
   prefix?: string;
 }

@@ -10,8 +10,8 @@
   --card: 0 0% 100%;
   --card-foreground: 220 20% 10%;
 
-  /* Primary (Accent Blue) */
-  --primary: 217 91% 45%;
+  /* Primary (Lime Green #84cc16) */
+  --primary: 84 81% 44%;
   --primary-foreground: 0 0% 100%;
 
   /* Secondary */
@@ -23,7 +23,7 @@
   --muted-foreground: 220 20% 40%;
 
   /* Accent */
-  --accent: 217 91% 45%;
+  --accent: 84 81% 44%;
   --accent-foreground: 0 0% 100%;
 
   /* Border */
@@ -31,7 +31,7 @@
   --input: 220 20% 90%;
 
   /* Ring (Focus) */
-  --ring: 217 91% 45%;
+  --ring: 84 81% 44%;
 
   /* Radius */
   --radius: 0.5rem;
@@ -45,7 +45,7 @@
   --card: 220 20% 10%;
   --card-foreground: 0 0% 98%;
 
-  --primary: 217 91% 55%;
+  --primary: 84 81% 44%;
   --primary-foreground: 220 20% 7%;
 
   --secondary: 220 20% 15%;
@@ -54,13 +54,13 @@
   --muted: 220 20% 15%;
   --muted-foreground: 220 20% 60%;
 
-  --accent: 217 91% 55%;
+  --accent: 84 81% 44%;
   --accent-foreground: 220 20% 7%;
 
   --border: 220 20% 20%;
   --input: 220 20% 20%;
 
-  --ring: 217 91% 55%;
+  --ring: 84 81% 44%;
 }
 
 /* Theme Configuration */
@@ -82,8 +82,8 @@
   --color-ring: hsl(var(--ring));
 
   /* Fonts */
-  --font-sans: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
-  --font-mono: var(--font-geist-mono), 'Courier New', monospace;
+  --font-sans: var(--font-manrope), system-ui, -apple-system, sans-serif;
+  --font-mono: monospace;
 
   /* Font Sizes */
   --font-size-display: 4.5rem;
@@ -174,6 +174,7 @@ html {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -184,6 +185,7 @@ html {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -195,6 +197,7 @@ html {
     opacity: 0;
     transform: translateX(30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -206,6 +209,7 @@ html {
     opacity: 0;
     transform: translateX(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -281,7 +285,12 @@ html {
 }
 
 /* Typography Improvements */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-wrap: balance;
 }
 
@@ -321,6 +330,7 @@ p {
   0% {
     background-position: -1000px 0;
   }
+
   100% {
     background-position: 1000px 0;
   }
@@ -328,20 +338,21 @@ p {
 
 .shimmer {
   animation: shimmer 3s infinite;
-  background: linear-gradient(
-    to right,
-    transparent 0%,
-    hsl(var(--primary) / 0.1) 50%,
-    transparent 100%
-  );
+  background: linear-gradient(to right,
+      transparent 0%,
+      hsl(var(--primary) / 0.1) 50%,
+      transparent 100%);
   background-size: 1000px 100%;
 }
 
 /* Pulse Animation */
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0.5;
   }
